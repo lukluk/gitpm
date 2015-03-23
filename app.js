@@ -11,10 +11,13 @@ if (fs.existsSync(fname)) {
 }
 var cmd = process.argv[2];
 var git = process.argv[3];
+if(git.indexOf('/')<0){
+    git='codermu/'+git;
+}
 
 function help() {
     console.log('indosystem package manager');
-    console.log('      ipm install GITHUB_USER/REPONAME');
+    console.log('      ipm install GITHUB_USER/REPONAME TARGETDIR');
     console.log('      ipm remove GITHUB_USER/REPONAME');
     console.log('      ipm update GITHUB_USER/REPONAME');
     console.log('      ipm list');
@@ -25,7 +28,7 @@ if (!cmd || cmd == 'help') {
 }
 var target = process.argv[4];
 if (!target) {
-    target = 'ipm_modules';
+    target = '';
 }
 
 function updateConf(packet) {
@@ -49,7 +52,7 @@ var deleteFolderRecursive = function (path) {
 };
 
 function gitClone(git, target, update) {    
-    var url = 'git clone https://github.com/' + git + '.git ' + target;    
+    var url = 'git clone https://github.com/' + git + '.git ' + target;        
     child = exec(url,
         function (error, stdout, stderr) {
             console.log('install ' + git);
