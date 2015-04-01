@@ -14,7 +14,7 @@ var git = process.argv[3];
 if(git.indexOf('/')<0){
     git='codermu/'+git;
 }
-
+//test
 function help() {
     console.log('indosystem package manager');
     console.log('      ipm install GITHUB_USER/REPONAME TARGETDIR');
