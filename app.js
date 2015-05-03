@@ -4,7 +4,7 @@ var exec = require('child_process').exec,
 var packet = {
     module: {}
 };
-var fname = 'ipm.json';
+var fname = 'gitpm.json';
 
 if (fs.existsSync(fname)) {
     packet = JSON.parse(fs.readFileSync(fname))
@@ -14,13 +14,13 @@ var git = process.argv[3];
 if(git.indexOf('/')<0){
     git='codermu/'+git;
 }
-
+//test
 function help() {
-    console.log('indosystem package manager');
-    console.log('      ipm install GITHUB_USER/REPONAME TARGETDIR');
-    console.log('      ipm remove GITHUB_USER/REPONAME');
-    console.log('      ipm update GITHUB_USER/REPONAME');
-    console.log('      ipm list');
+    console.log('github package manager');
+    console.log('      gitpm install GITHUB_USER/REPONAME TARGETDIR');
+    console.log('      gitpm remove GITHUB_USER/REPONAME');
+    console.log('      gitpm update GITHUB_USER/REPONAME');
+    console.log('      gitpm list');
 }
 if (!cmd || cmd == 'help') {
     help();

@@ -1,0 +1,28 @@
+{
+  "name": "gitpm",
+  "version": "1.0.0",
+  "description": "github package manager",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "filesearch" : "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codermu/ipm.git"
+  },
+  "keywords": [
+    "github",
+    "package",
+    "manager"
+  ],
+  "author": "luklukaha@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codermu/ipm/issues"
+  },
+  "homepage": "https://github.com/codermu/ipm"
+}
